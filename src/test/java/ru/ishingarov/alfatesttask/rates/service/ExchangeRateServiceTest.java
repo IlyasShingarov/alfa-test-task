@@ -26,12 +26,13 @@ public class ExchangeRateServiceTest {
     private FeignExchangeRatesClient feignExchangeRatesClient;
 
     @Test
-    public void ExchangeRates() {
+    public void USDExchangeRates() {
         //prepare
         ExchangeRatesEntity exchangeRatesEntity = new ExchangeRatesEntity();
         Map<String, Double> setRates = new HashMap<>();
         setRates.put("RUB", 1d);
         exchangeRatesEntity.setRates(setRates);
+
         Mockito.when(feignExchangeRatesClient.getUSDRatesByDate(anyString(), anyString()))
                 .thenReturn(exchangeRatesEntity);
 
@@ -39,6 +40,25 @@ public class ExchangeRateServiceTest {
                 .thenReturn(exchangeRatesEntity);
         //when
         boolean result = exchangeRateService.compareRates();
+        //then
+        Assertions.assertFalse(result);
+    }
+
+    @Test
+    public void CurrencyExchangeRates() {
+        //prepare
+        ExchangeRatesEntity exchangeRatesEntity = new ExchangeRatesEntity();
+        Map<String, Double> setRates = new HashMap<>();
+        setRates.put("RUB", 1d);
+        exchangeRatesEntity.setRates(setRates);
+
+        Mockito.when(feignExchangeRatesClient.getCurrencyRatesByDate(anyString(), anyString(), anyString()))
+                .thenReturn(exchangeRatesEntity);
+
+        Mockito.when(feignExchangeRatesClient.getLatestCurrencyRates(anyString(), anyString()))
+                .thenReturn(exchangeRatesEntity);
+        //when
+        boolean result = exchangeRateService.compareRatesByCode("EUR");
         //then
         Assertions.assertFalse(result);
     }

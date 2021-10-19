@@ -69,4 +69,26 @@ public class GifRatesControllerTest {
 
     }
 
+    @Test
+    public void brokeCurrencyReturn() throws Exception {
+        //prepare
+        Mockito.when(exchangeRatesService.compareRates())
+                .thenReturn(false);
+        //when
+        this.mockMvc.perform(get("/gif/EUR")).andExpect(status().isOk());
+        //assert no exception
+
+    }
+
+    @Test
+    public void richCurrencyReturn() throws Exception {
+        //prepare
+        Mockito.when(exchangeRatesService.compareRates())
+                .thenReturn(true);
+        //when
+        this.mockMvc.perform(get("/gif/EUR")).andExpect(status().isOk());
+        //assert no exception
+
+    }
+
 }
