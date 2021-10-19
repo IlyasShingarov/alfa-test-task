@@ -5,13 +5,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import ru.ishingarov.alfatesttask.service.ExchangeRateService;
-import ru.ishingarov.alfatesttask.service.GifService;
+import ru.ishingarov.alfatesttask.rates.service.ExchangeRateService;
+import ru.ishingarov.alfatesttask.gif.service.GifService;
 
 @Slf4j
 @Controller
 @RequiredArgsConstructor
-public class MainController {
+public class GifRatesController {
     private final ExchangeRateService exchangeRateService;
     private final GifService gifService;
 

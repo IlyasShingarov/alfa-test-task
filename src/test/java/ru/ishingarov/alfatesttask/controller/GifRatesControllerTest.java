@@ -12,15 +12,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
-import ru.ishingarov.alfatesttask.service.ExchangeRateService;
-import ru.ishingarov.alfatesttask.service.GifService;
+import ru.ishingarov.alfatesttask.rates.service.ExchangeRateService;
+import ru.ishingarov.alfatesttask.gif.service.GifService;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(MainController.class)
-public class MainControllerTest {
+@WebMvcTest(GifRatesController.class)
+public class GifRatesControllerTest {
     @Value("${giphy.rich}")
     private String rich;
 
@@ -40,7 +40,7 @@ public class MainControllerTest {
     private GifService gifService;
 
     @Autowired
-    private  MainController mainController;
+    private GifRatesController gifRatesController;
 
     @Before
     public void setup() {

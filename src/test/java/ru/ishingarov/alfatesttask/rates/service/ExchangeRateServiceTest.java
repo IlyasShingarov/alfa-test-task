@@ -1,4 +1,4 @@
-package ru.ishingarov.alfatesttask.service;
+package ru.ishingarov.alfatesttask.rates.service;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
-import ru.ishingarov.alfatesttask.feignclient.FeignExchangeRatesClient;
-import ru.ishingarov.alfatesttask.model.ExchangeRatesEntity;
+import ru.ishingarov.alfatesttask.rates.feignclient.FeignExchangeRatesClient;
+import ru.ishingarov.alfatesttask.rates.model.ExchangeRatesEntity;
 
 import java.util.HashMap;
 import java.util.Map;

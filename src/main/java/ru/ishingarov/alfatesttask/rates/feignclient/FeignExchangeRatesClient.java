@@ -1,10 +1,10 @@
-package ru.ishingarov.alfatesttask.feignclient;
+package ru.ishingarov.alfatesttask.rates.feignclient;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
-import ru.ishingarov.alfatesttask.model.ExchangeRatesEntity;
+import ru.ishingarov.alfatesttask.rates.model.ExchangeRatesEntity;
 
 /**
  * Client for OpenExchangeRates API

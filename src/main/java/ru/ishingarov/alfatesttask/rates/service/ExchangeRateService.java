@@ -1,11 +1,11 @@
-package ru.ishingarov.alfatesttask.service;
+package ru.ishingarov.alfatesttask.rates.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import ru.ishingarov.alfatesttask.feignclient.FeignExchangeRatesClient;
-import ru.ishingarov.alfatesttask.model.ExchangeRatesEntity;
+import ru.ishingarov.alfatesttask.rates.feignclient.FeignExchangeRatesClient;
+import ru.ishingarov.alfatesttask.rates.model.ExchangeRatesEntity;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

@@ -1,10 +1,10 @@
-package ru.ishingarov.alfatesttask.service;
+package ru.ishingarov.alfatesttask.gif.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import ru.ishingarov.alfatesttask.feignclient.FeignGiphyClient;
+import ru.ishingarov.alfatesttask.gif.feignclient.FeignGiphyClient;
 
 @Slf4j
 @Service

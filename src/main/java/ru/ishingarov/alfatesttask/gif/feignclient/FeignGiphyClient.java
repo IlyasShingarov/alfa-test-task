@@ -1,9 +1,9 @@
-package ru.ishingarov.alfatesttask.feignclient;
+package ru.ishingarov.alfatesttask.gif.feignclient;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import ru.ishingarov.alfatesttask.model.GiphyEntity;
+import ru.ishingarov.alfatesttask.gif.model.GiphyEntity;
 
 /** Client for interacting with GIPHY API
  */

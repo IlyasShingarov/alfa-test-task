@@ -1,4 +1,4 @@
-package ru.ishingarov.alfatesttask.model;
+package ru.ishingarov.alfatesttask.rates.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
