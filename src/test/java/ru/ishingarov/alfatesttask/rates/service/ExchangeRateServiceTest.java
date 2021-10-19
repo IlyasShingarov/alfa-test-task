@@ -32,13 +32,13 @@ public class ExchangeRateServiceTest {
         Map<String, Double> setRates = new HashMap<>();
         setRates.put("RUB", 1d);
         exchangeRatesEntity.setRates(setRates);
-        Mockito.when(feignExchangeRatesClient.getRatesByDate(anyString(), anyString()))
+        Mockito.when(feignExchangeRatesClient.getUSDRatesByDate(anyString(), anyString()))
                 .thenReturn(exchangeRatesEntity);
 
-        Mockito.when(feignExchangeRatesClient.getLatestRates(anyString()))
+        Mockito.when(feignExchangeRatesClient.getLatestUSDRates(anyString()))
                 .thenReturn(exchangeRatesEntity);
         //when
-        boolean result = exchangeRateService.getAndCompareRates();
+        boolean result = exchangeRateService.compareRates();
         //then
         Assertions.assertFalse(result);
     }

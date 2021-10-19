@@ -44,6 +44,15 @@ Nice to Have
 --- Будет выполнен запрос на курсы валют сегодняшнего и предыдущего дня и далее будет показана страница в зависимости от того, вырос курс или упал.
 ```
 GET localhost:{port}/gif
+
+Или
+
+GET localhost:{port}/gif/{currency}
+
+Например:
+GET localhost:8080/gif -- По умолчанию currency == USD
+GET localhost:8080/gif/USD
+GET localhost:8080/gif/EUR
 ```
 ## Запуск
 ### Локально

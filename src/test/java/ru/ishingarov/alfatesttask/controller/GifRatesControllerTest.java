@@ -50,7 +50,7 @@ public class GifRatesControllerTest {
     @Test
     public void richReturn() throws Exception {
         //prepare
-        Mockito.when(exchangeRatesService.getAndCompareRates())
+        Mockito.when(exchangeRatesService.compareRates())
                 .thenReturn(true);
         //when
         this.mockMvc.perform(get("/gif")).andExpect(status().isOk());
@@ -61,7 +61,7 @@ public class GifRatesControllerTest {
     @Test
     public void brokeReturn() throws Exception {
         //prepare
-        Mockito.when(exchangeRatesService.getAndCompareRates())
+        Mockito.when(exchangeRatesService.compareRates())
                 .thenReturn(false);
         //when
         this.mockMvc.perform(get("/gif")).andExpect(status().isOk());

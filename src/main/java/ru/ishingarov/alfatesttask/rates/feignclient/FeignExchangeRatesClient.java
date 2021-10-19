@@ -12,19 +12,45 @@ import ru.ishingarov.alfatesttask.rates.model.ExchangeRatesEntity;
 @FeignClient(name = "OpenExchangeRatesClient", url = "${api.openexchangerates.url}")
 public interface FeignExchangeRatesClient {
     /**
-     * Gets the latest rates for base currency
+     * Gets the latest rates USD
      * @param appId app_id for authorisation
      * @return ExchangeRateEntity which holds provided response
      */
     @GetMapping("/latest.json")
-    ExchangeRatesEntity getLatestRates(@RequestParam("app_id") String appId);
+    ExchangeRatesEntity getLatestUSDRates(@RequestParam("app_id") String appId);
 
     /**
-     * Gets rates by provided date
+     * Gets rates by provided date for USD
      * @param date historical date
      * @param appId app_id for authorisation
      * @return ExchangeRateEntity which holds provided response
      */
     @GetMapping("/historical/{date}.json")
-    ExchangeRatesEntity getRatesByDate(@PathVariable String date, @RequestParam("app_id") String appId);
+    ExchangeRatesEntity getUSDRatesByDate(@PathVariable String date, @RequestParam("app_id") String appId);
+
+    /**
+     * Gets the latest rates for base currency
+     * @param appId app_id for authorisation
+     * @param base base currency
+     * @return ExchangeRateEntity which holds provided response
+     */
+    @GetMapping("/latest.json")
+    ExchangeRatesEntity getLatestCurrencyRates(
+            @RequestParam("app_id") String appId,
+            @RequestParam("base") String base
+    );
+
+    /**
+     * Gets rates by provided date for base currency
+     * @param date historical date
+     * @param appId app_id for authorisation
+     * @param base base currency
+     * @return ExchangeRateEntity which holds provided response
+     */
+    @GetMapping("/historical/{date}.json")
+    ExchangeRatesEntity getCurrencyRatesByDate(
+            @PathVariable String date,
+            @RequestParam("app_id") String appId,
+            @RequestParam("base") String base
+    );
 }
